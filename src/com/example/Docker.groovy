@@ -1,11 +1,12 @@
 #!/usr/bin/env groovy
+
 package com.example
 
 class Docker implements Serializable {
 
-    def 
+    def script
 
-    Docker(script){
+    Docker(script) {
         this.script = script
     }
 
@@ -15,8 +16,5 @@ class Docker implements Serializable {
       script.sh "docker build -t $imageName ."script
       script.sh "docker login -u '${script.USER}' -p '${script.PASS}"
       script.sh "docker push $imageName"
-    }
-    
-
     }
 }
